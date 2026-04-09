@@ -2,6 +2,10 @@
 // https://docs.swift.org/swift-book
 
 import Foundation
+// Required on Linux where URLSession, URLRequest, etc. live in FoundationNetworking
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 import Logging
 
 /// ``TibberSwift`` is a simple SPM that helps you create queries towards Tibber's GraphQL server.

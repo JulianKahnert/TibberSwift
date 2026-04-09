@@ -1,4 +1,8 @@
 import Foundation
+// Required on Linux where URLSession, URLRequest, etc. live in FoundationNetworking
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 /// The errors that can be returned by ``GraphQLOperation``
 public enum GraphQLOperationError: Error {
